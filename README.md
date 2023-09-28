@@ -2,7 +2,7 @@
 
 Students:
 
-* Surname_1, First_name_1
+* Tarrida Domingo, Pere
 
 * Surname_2, First_name_2
 
