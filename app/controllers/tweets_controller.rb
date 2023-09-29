@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: %i[ show edit update destroy ]
+  before_action :set_tweet, only: %i[ show edit update destroy like ]
 
   # GET /tweets or /tweets.json
   def index
@@ -70,6 +70,15 @@ class TweetsController < ApplicationController
       end
     end
   end
+  
+def like
+    @tweet.likes += 1
+    @tweet.save
+    respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { head :no_content }
+    end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
